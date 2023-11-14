@@ -13,14 +13,16 @@
 
     <main>
         <div id="liste-oeuvres">
-        <?php include('oeuvres.php'); ?>
-        <?php foreach($array as $painting) : ?>
+        <?php require 'oeuvres.php'; ?>
+        <?php foreach($array as $k => $v) : ?>
             <article class="oeuvre">
-                <?php echo $painting['pictures']; ?>
-                <h2><?php echo $painting['title']; ?></h2>
-                <p class="description"><?php echo $painting['author']; ?></p>
+                <a href="<?php echo $v['link']; ?>">
+                    <?php echo $v['pictures']; ?>
+                    <h2><?php echo $v['title']; ?></h2>
+                    <p class="description"><?php echo $v['author']; ?></p>
+                </a>
             </article>
-            <?php endforeach ?>
+        <?php endforeach ?>
         </div>
     </main>
 
