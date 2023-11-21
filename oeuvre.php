@@ -14,19 +14,26 @@
 
     <main>
         <?php require 'oeuvres.php'; ?>
-        <?php foreach($array as $k => $v)
-                if($_GET['id'] == $v['id']): ?>
-        <article id="detail-oeuvre">
-            <div id="img-oeuvre">
-                <?php echo $v['pictures']; ?>
-            </div>
-            <div id="contenu-oeuvre">
-                <h1><?php echo $v['title']; ?></h1>
-                <p class="description"><?php echo $v['author']; ?></p>
-                <p class="description-complete"><?php echo $v['description']; ?></p>
-            </div>
-        </article>
-        <?php endif ?>
+       <?php //Vérifier que 'id' est bien dans l'URL//
+            if(isset($_GET['id'])) {
+                //Récupérer l'identifiant dans l'URL//
+                $identifiant = $_GET['id'];
+                //Rechercher dans le tableau l'oeuvre correspondant à l'identifiant//
+                if (array_key_exists($identifiant, $array)) {
+                // Si l'oeuvre existe, afficher son contenu //
+                    $v = $array[$identifiant]; ?>
+                    <article id="detail-oeuvre">
+                        <div id="img-oeuvre">
+                            <?php echo $v['pictures']; ?>
+                        </div>
+                        <div id="contenu-oeuvre">
+                            <h1><?php echo $v['title']; ?></h1>
+                            <p class="description"><?php echo $v['author']; ?></p>
+                            <p class="description-complete"><?php echo $v['description']; ?></p>
+                        </div>
+                    </article>
+                    <?php //Si l'oeuvre n'existe pas, renvoie le message suivant// 
+                        } else { echo "Cette page n'existe pas."; }} ?>
     </main>
 
     <?php include('footer.php'); ?>
