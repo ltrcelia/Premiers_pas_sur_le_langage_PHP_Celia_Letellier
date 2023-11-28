@@ -10,7 +10,8 @@
 </head>
 <body>
 
-    <?php include('header.php'); ?>
+    <?php //Exécute le fichier header.php//
+        include('header.php'); ?>
 
     <main>
         <?php require 'oeuvres.php'; ?>
@@ -32,11 +33,13 @@
                             <p class="description-complete"><?php echo $v['description']; ?></p>
                         </div>
                     </article>
-                    <?php //Si l'oeuvre n'existe pas, renvoie le message suivant// 
-                        } else { echo "Cette page n'existe pas."; }} ?>
+                    <?php //Si l'oeuvre n'existe pas, renvoie le message 404 suivant// 
+                        } else { http_response_code(404);
+                            echo 'Page non trouvée'; }} ?>
     </main>
 
-    <?php include('footer.php'); ?>
+    <?php //Exécute le fichier footer.php//
+        include('footer.php'); ?>
 
 </body>
 </html>

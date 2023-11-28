@@ -9,13 +9,17 @@
 </head>
 <body>
 
-    <?php include('header.php'); ?>
+    <?php //Exécute le fichier header.php//
+        include('header.php'); ?>
 
     <main>
         <div id="liste-oeuvres">
-        <?php require 'oeuvres.php'; ?>
-        <?php foreach($array as $k => $v) : ?>
+        <?php //Exécute le fichier oeuvres.php//
+            require 'oeuvres.php'; ?>
+        <?php //Parcours les éléments du tableau array//
+            foreach($array as $k => $v) : ?>
             <article class="oeuvre">
+                <!--S'ils sont présents, affiche les éléments du tableau-->
                 <a href="<?php echo $v['link']; ?>">
                     <?php echo $v['pictures']; ?>
                     <h2><?php echo $v['title']; ?></h2>
@@ -26,7 +30,8 @@
         </div>
     </main>
 
-    <?php include('footer.php'); ?>
+    <?php //Exécute le fichier footer.php//
+        include('footer.php'); ?>
 
 </body>
 </html>
