@@ -14,14 +14,15 @@
         include('header.php'); ?>
 
     <main>
-        <?php require 'oeuvres.php'; ?>
+        <?php //Exécute le fichier oeuvres.php//
+            require 'oeuvres.php'; ?>
        <?php //Vérifier que 'id' est bien dans l'URL//
             if(isset($_GET['id'])) {
                 //Récupérer l'identifiant dans l'URL//
                 $identifiant = $_GET['id'];
                 //Rechercher dans le tableau l'oeuvre correspondant à l'identifiant//
                 if (array_key_exists($identifiant, $array)) {
-                // Si l'oeuvre existe, afficher son contenu //
+                //Si l'oeuvre existe, afficher son contenu//
                     $v = $array[$identifiant]; ?>
                     <article id="detail-oeuvre">
                         <div id="img-oeuvre">

@@ -18,15 +18,16 @@
             require 'oeuvres.php'; ?>
         <?php //Parcours les éléments du tableau array//
             foreach($array as $k => $v) : ?>
+            <!--S'ils sont présents, affiche les éléments du tableau-->
             <article class="oeuvre">
-                <!--S'ils sont présents, affiche les éléments du tableau-->
                 <a href="<?php echo $v['link']; ?>">
                     <?php echo $v['pictures']; ?>
                     <h2><?php echo $v['title']; ?></h2>
                     <p class="description"><?php echo $v['author']; ?></p>
                 </a>
             </article>
-        <?php endforeach ?>
+        <?php //Fin de la boucle foreach//
+            endforeach ?>
         </div>
     </main>
 
