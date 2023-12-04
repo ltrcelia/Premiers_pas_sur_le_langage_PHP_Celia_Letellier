@@ -15,7 +15,7 @@
 
     <main>
         <?php //Exécute le fichier oeuvres.php//
-            require 'oeuvres.php'; ?>
+            include 'oeuvres.php'; ?>
        <?php //Vérifier que 'id' est bien dans l'URL//
             if(isset($_GET['id'])) {
                 //Récupérer l'identifiant dans l'URL//

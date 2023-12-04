@@ -15,7 +15,7 @@
     <main>
         <div id="liste-oeuvres">
         <?php //Exécute le fichier oeuvres.php//
-            require 'oeuvres.php'; ?>
+            include 'oeuvres.php'; ?>
         <?php //Parcours les éléments du tableau array//
             foreach($array as $k => $v) : ?>
             <!--S'ils sont présents, affiche les éléments du tableau-->
